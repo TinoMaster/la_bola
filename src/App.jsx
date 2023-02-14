@@ -1,11 +1,18 @@
-import { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { HashRouter } from "react-router-dom";
+import { Container } from "./components/Container";
 import { Menu } from "./components/Menu";
 
 function App() {
+  
   return (
-    <div className="w-screen h-screen ">
-      <Menu />
-      <h2 className="">La Bola</h2>
+    <div className="flex flex-col w-screen h-screen ">
+      <HashRouter>
+        <Menu />
+        <Container />
+      </HashRouter>
     </div>
   );
 }

@@ -1,0 +1,1 @@
+export const SET_ALL_DOCUMENTS = "SET_ALL_DOCUMENTS";
