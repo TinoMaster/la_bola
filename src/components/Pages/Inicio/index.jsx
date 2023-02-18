@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineFileAdd } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { httpHelper } from "../../../helpers/httpHelper";
 import apiConfig from "../../../config/api_config.json";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,14 +24,18 @@ export const Inicio = () => {
       });
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-full relative font-serif">
-      <Link
-        to={"/newProject"}
+      <div
         className="absolute p-3 shadow-md shadow-black/40 rounded-full bg-darkMode/90 bottom-2 right-2"
+        onClick={() => {
+          navigate("./newProject", { state: "/" });
+        }}
       >
         <AiOutlineFileAdd className="text-slate-100" />
-      </Link>
+      </div>
 
       {/* Render de Documentos */}
       <div className="flex flex-wrap w-full bg-slate-100">

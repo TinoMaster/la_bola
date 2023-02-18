@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FijoYcorrido } from "./fijoYcorrido";
+import { Parlets } from "./parlets";
 
 const defaultList = {
   name: "",
@@ -52,9 +54,12 @@ export const NewList = ({ setCollection, setIsOpenNewList }) => {
                 >
                   Aceptar
                 </button>
-                <button className="mx-1 my-2 rounded-md p-2 bg-black/10 shadow-md hover:cursor-pointer hover:bg-red-500 transition-colors">
+                <Link
+                  to={"/newProject"}
+                  className="mx-1 my-2 rounded-md p-2 bg-black/10 shadow-md hover:cursor-pointer hover:bg-red-500 transition-colors"
+                >
                   Cancelar
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -78,13 +83,9 @@ export const NewList = ({ setCollection, setIsOpenNewList }) => {
           {/* Datos de la lista */}
           <div className="flex flex-wrap w-full">
             {/* Parte de fijos y corridos */}
-            <div className="w-full lg:w-1/2 p-2">
-              <h3 className="bg-violet-500 text-slate-200 p-1 rounded-sm">Fijos y corridos</h3>
-            </div>
+            <FijoYcorrido />
             {/* Parte de parlets */}
-            <div className="w-full lg:w-1/2 p-2">
-              <h3 className="bg-teal-500 text-slate-200 p-1 rounded-sm">Parlet</h3>
-            </div>
+            <Parlets />
           </div>
         </div>
       )}

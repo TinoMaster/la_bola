@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineFileAdd } from "react-icons/ai";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const date = new Date();
 const largeDate = `${date.getDate()}/${
@@ -23,7 +23,11 @@ export const NewProject = () => {
   const [newProject, setNewProject] = useState(false);
 
   useEffect(() => {
-    if (collection.lists.length === 0 && collection.schedule === "") {
+    if (
+      collection.lists.length === 0 &&
+      collection.lists.length === 0 &&
+      collection.schedule === ""
+    ) {
       setNewProject(true);
     }
   }, []);
