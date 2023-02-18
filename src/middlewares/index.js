@@ -8,7 +8,7 @@ export const defaultDocuments = (store) => (next) => (actionInfo) => {
     {
       _id: "63ed2fc5d915aafa016e3ec5",
       numbers: {
-        fijo: 87,
+        centena: 687,
         corrido_1: 60,
         corrido_2: 47,
       },
@@ -108,7 +108,7 @@ export const defaultDocuments = (store) => (next) => (actionInfo) => {
     {
       _id: "63ed2fc5d915aafa016e3ec2",
       numbers: {
-        fijo: 25,
+        centena: 225,
         corrido_1: 33,
         corrido_2: 50,
       },

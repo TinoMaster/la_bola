@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.inputChecked{
+    @apply hidden;
+}
+
+.inputChecked:checked + label{
+    @apply bg-green-400;
+}
