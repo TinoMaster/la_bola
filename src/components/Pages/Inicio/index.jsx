@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineFileAdd } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { RiAddCircleFill } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import { httpHelper } from "../../../helpers/httpHelper";
 import apiConfig from "../../../config/api_config.json";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,30 +27,27 @@ export const Inicio = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-full relative font-serif">
-      <div
-        className="absolute p-3 shadow-md shadow-black/40 rounded-full bg-darkMode/90 bottom-2 right-2"
-        onClick={() => {
-          navigate("./newProject", { state: "/" });
-        }}
-      >
-        <AiOutlineFileAdd className="text-slate-100" />
+    <div className="w-full h-full relative">
+      {/* Ultimos movimientos */}
+      <div className="flex flex-col p-2">
+        <h3 className="text-xl py-3">Movimientos recientes</h3>
+        <div className="w-full h-[220px] bg-black/10 rounded-lg shadow-md"></div>
       </div>
-
-      {/* Render de Documentos */}
-      <div className="flex flex-wrap w-full bg-slate-100">
-        <h3 className="w-full text-center p-2 text-darkMode">Colecciones:</h3>
-
-        {documents?.map((el) => (
+      {/* Agregar app */}
+      <div className="flex flex-col p-2">
+        <h3 className="p-2 w-full">Lista de Aplicaciones</h3>
+        {/* Caja de aplicaciones */}
+        <div className="w-full h-[180px]">
+          {/* Caja add aplicacion */}
           <div
-            key={el._id}
-            className="flex justify-between w-full p-2 bg-black/5 m-1 rounded-md hover:bg-black/10 hover:cursor-pointer shadow-md"
+            className="flex flex-col justify-center items-center w-[140px] h-full p-2 bg-black/10 shadow-md rounded-md  bottom-2 right-2"
+            onClick={() => {
+              navigate("./newProject", { state: "/" });
+            }}
           >
-            <p className="">{el.date}</p>
-            <p className="">{el.schedule}</p>
+            <RiAddCircleFill className="text-3xl text-slate-700" /> <p className="text-sm">Añadir Aplicacion</p>
           </div>
-        ))}
-        {documents?.length === 0 && <p>No hay colecciones disponibles</p>}
+        </div>
       </div>
     </div>
   );

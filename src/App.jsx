@@ -6,7 +6,7 @@ import { Menu } from "./components/Menu";
 
 function App() {
   return (
-    <div className="flex flex-col w-screen h-screen ">
+    <div className="flex flex-col w-screen h-screen font-roboto">
       <HashRouter>
         <Menu />
         <Container />

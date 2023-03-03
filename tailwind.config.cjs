@@ -19,6 +19,10 @@ module.exports = {
       minHeight: {
         movil: "550px",
       },
+      fontFamily:{
+        "roboto":['Roboto', 'sans-serif'],
+        "shantell":['Shantell Sans', 'cursive']
+      }
     },
   },
   plugins: [],
